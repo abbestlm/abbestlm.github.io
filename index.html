@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abbes Portfolio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon"> <!-- Add this line for the favicon -->
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(to right, #007bff, #6610f2);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header img {
+            border: 5px solid white;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header .btn {
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        header .btn:hover {
+            background-color: white;
+            color: #007bff;
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+            height: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img-top {
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .btn-container {
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .btn-secondary.disabled {
+            background-color: #6c757d;
+            border: none;
+            cursor: not-allowed;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 30px 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #007bff;
+        }
+
+        /* Keyframes for text animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Text animation for header */
+        header h1,
+        header p {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Animation for sections */
+        .animated-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        .animated-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-dark text-white text-center py-5">
+        <div class="container">
+            <img src="ana.jpeg" alt="Abbes Abd Ennour" class="rounded-circle mb-3" width="150">
+            <h1 class="display-4">Abbes Abd Ennour</h1>
+            <p class="lead">Software Developer | Frontend, Backend & Game Dev</p>
+            <div class="d-flex justify-content-center">
+                <a href="https://www.linkedin.com/in/abd-ennour-abbes-208170276/" target="_blank"
+                    class="btn btn-outline-light mx-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/abbestlm" target="_blank" class="btn btn-outline-light mx-2"><i
+                        class="fab fa-github"></i> GitHub</a>
+                <a href="mailto:abbes.abdennour13@gmail.com" class="btn btn-outline-light mx-2"><i
+                        class="fas fa-envelope"></i> Email</a>
+                <a href="https://wa.me/+213553379103" target="_blank" class="btn btn-outline-light mx-2"><i
+                        class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5 animated-section" id="about-me">
+        <div class="container">
+            <h2 class="text-center">About Me</h2>
+            <p class="text-center mb-5">I am a passionate software developer with experience in frontend, backend, and
+                game development. I enjoy creating interactive and user-friendly applications and games that provide
+                value to users. Currently pursuing a Master’s Degree in Computer Science at the University of
+                Tlemcen.</p>
+
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <h3>Frontend Development</h3>
+                    <p>HTML, CSS, JavaScript, React, WordPress</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h3>Backend Development</h3>
+                    <p>PHP, SQL, Node.js, Express.js</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h3>Game Development</h3>
+                    <p>Unity, C#, Blender</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-5 animated-section" id="projects">
+        <div class="container">
+            <h2 class="text-center">Projects</h2>
+            <div class="row">
+                <!-- Project 1: Tlemcen Introduction Website -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="project1.png" class="card-img-top" alt="Tlemcen Introduction Website">
+                        <div class="card-body">
+                            <h5 class="card-title">Tlemcen Introduction Website</h5>
+                            <p class="card-text">Developed a WordPress website for introducing Tlemcen and its artisans.
+                                This project features a user-friendly interface and informative content about the city
+                                and
+                                its cultural heritage.</p>
+                            <div class="btn-container">
+                                <a href="https://dev-tlemtour.pantheonsite.io/" class="btn btn-primary"
+                                    target="_blank">View
+                                    Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2: Slither.io-like Game -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="project2.png" class="card-img-top" alt="Slither.io-like Game">
+                        <div class="card-body">
+                            <h5 class="card-title">Slither.io-like Game</h5>
+                            <p class="card-text">Developed a multiplayer game similar to Slither.io using Unity. This
+                                project features networked gameplay, player growth mechanics, and a circular game world.
+                                <strong>Still Under Development</strong>
+                            </p>
+                            <div class="btn-container">
+                                <a href="#" class="btn btn-secondary disabled">Not Available</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3: The Giving Water -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="project3.png" class="card-img-top" alt="The Giving Water">
+                        <div class="card-body">
+                            <h5 class="card-title">The Giving Water</h5>
+                            <p class="card-text">Created an application using React, Node.js, and Express.js to manage
+                                and
+                                distribute water resources. This project demonstrates full-stack development skills and
+                                modern web technologies.
+                                <strong>Still Under Development</strong>
+                            </p>
+                            <div class="btn-container">
+                                <a href="#" class="btn btn-secondary disabled">Not Available</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4: The Forgers of Tlemken -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="project4.png" class="card-img-top" alt="The Forgers of Tlemken">
+                        <div class="card-body">
+                            <h5 class="card-title">The Forgers of Tlemken</h5>
+                            <p class="card-text">An immersive Unity game involving player customization, multiple
+                                scenes,
+                                and interactive elements. This project showcases advanced game development and design
+                                skills.
+                                <strong>Still Under Development</strong>
+                            </p>
+                            <div class="btn-container">
+                                <a href="#" class="btn btn-secondary disabled">Not Available</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <p>&copy; 2024 Abbes Abd Ennour. All rights reserved.</p>
+        <p>
+            <a href="#about-me">About Me</a> | <a href="#projects">Projects</a>
+        </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Fade in sections on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.animated-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+
+</html>
