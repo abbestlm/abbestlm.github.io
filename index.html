@@ -60,6 +60,14 @@ header img {
 header img:hover {
     transform: scale(1.1);
 }
+.contact-icon {
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .contact-icon:hover {
+        color: #f39c12; /* Change to your desired hover color */
+        transform: scale(1.1); /* Slightly increase the size */
+    }
 
 .btn-outline-light {
     border-radius: 50px;
@@ -254,18 +262,22 @@ header img:hover {
         <h1 class="display-4">Abbes Abd Ennour</h1>
         <p class="lead">Software Developer | Frontend, Backend & Game Dev</p>
         <div class="d-flex justify-content-center">
-            <a href="https://www.linkedin.com/in/abd-ennour-abbes-208170276/" target="_blank" class="text-white mx-3"><i
-                    class="fab fa-linkedin fa-3x"></i></a>
-            <a href="https://github.com/abbestlm" target="_blank" class="text-white mx-3"><i
-                    class="fab fa-github fa-3x"></i></a>
-            <a href="mailto:abbes.abdennour13@gmail.com" class="text-white mx-3"><i
-                    class="fas fa-envelope fa-3x"></i></a>
-            <a href="https://wa.me/+213553379103" target="_blank" class="text-white mx-3"><i
-                    class="fab fa-whatsapp fa-3x"></i></a>
+            <a href="https://www.linkedin.com/in/abd-ennour-abbes-208170276/" target="_blank"
+                class="text-white mx-3 contact-icon">
+                <i class="fab fa-linkedin fa-3x"></i>
+            </a>
+            <a href="https://github.com/abbestlm" target="_blank" class="text-white mx-3 contact-icon">
+                <i class="fab fa-github fa-3x"></i>
+            </a>
+            <a href="mailto:abbes.abdennour13@gmail.com" class="text-white mx-3 contact-icon">
+                <i class="fas fa-envelope fa-3x"></i>
+            </a>
+            <a href="https://wa.me/+213553379103" target="_blank" class="text-white mx-3 contact-icon">
+                <i class="fab fa-whatsapp fa-3x"></i>
+            </a>
         </div>
     </div>
 </header>
-
 <section class="bg-light py-5 animated-section" id="projects">
     <div class="container">
         <div class="text-center mb-4">
