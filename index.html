@@ -7,134 +7,250 @@
     <title>Abbes Portfolio</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="icon" href="favicon.png" type="image/x-icon"> <!-- Add this line for the favicon -->
+    <link rel="icon" href="favicon.png" type="image/x-icon">
     <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
+ /* Global Styles */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6a11cb;
+    --light-color: #ffffff;
+    --dark-color: #333;
+    --light-gray: #e9ecef;
+    --medium-gray: #ddd;
+    --dark-gray: #555;
+    --text-light: #fff;
+}
 
-        header {
-            background: linear-gradient(to right, #007bff, #6610f2);
-            color: white;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f9fd;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
 
-        header img {
-            border: 5px solid white;
-            animation: fadeIn 2s ease-in-out;
-        }
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    clip-path: ellipse(100% 100% at 50% 0%);
+}
 
-        header .btn {
-            margin: 10px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
+header h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+}
 
-        header .btn:hover {
-            background-color: white;
-            color: #007bff;
-            transform: scale(1.05);
-        }
+header p {
+    font-size: 1.5em;
+}
 
-        section {
-            padding: 60px 0;
-        }
+header img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid var(--text-light);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
 
-        .card {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 30px;
-            height: 100%;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+header img:hover {
+    transform: scale(1.1);
+}
 
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+.btn-outline-light {
+    border-radius: 50px;
+    padding: 10px 30px;
+    transition: all 0.3s ease;
+}
 
-        .card-img-top {
-            height: 150px;
-            object-fit: cover;
-        }
+.btn-outline-light:hover {
+    background-color: var(--text-light);
+    color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
 
-        .card-body {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+#about-me {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    clip-path: ellipse(100% 100% at 50% 100%);
+}
 
-        .btn-container {
-            margin-top: auto;
-            text-align: center;
-        }
 
-        .btn-secondary.disabled {
-            background-color: #6c757d;
-            border: none;
-            cursor: not-allowed;
-        }
 
-        footer {
-            background: #333;
-            color: white;
-            padding: 30px 0;
-        }
+#about-me i, #about-me p {
+    color: var(--text-light);
+}
 
-        footer a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+/* Progress Bar Styles */
+.progress {
+    height: 30px;
+    margin-top: 10px;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+}
 
-        footer a:hover {
-            color: #007bff;
-        }
+.progress-bar {
+    transition: width 0.3s ease;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    text-align: center;
+    color: var(--text-light);
+    line-height: 30px;
+    height: 100%;
+}
 
-        /* Keyframes for text animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+.progress-bar[aria-valuenow="100"] {
+    background-color: #28a745; /* Green for completed */
+}
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.progress-bar[aria-valuenow="50"] {
+    background-color: #ffc107; /* Yellow for in progress */
+}
 
-        /* Text animation for header */
-        header h1,
-        header p {
-            animation: fadeIn 1s ease-in-out;
-        }
+.progress-bar[aria-valuenow="30"] {
+    background-color: #fd7e14; /* Orange for in progress */
+}
 
-        /* Animation for sections */
-        .animated-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s, transform 1s;
-        }
+.progress-bar[aria-valuenow="80"] {
+    background-color: #35dc75; /* Red for early stage */
+}
 
-        .animated-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+/* Button Styles */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: var(--text-light);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.btn-primary:focus {
+    outline: none;
+}
+
+/* Projects Content Styles */
+.projectsContent {
+    display: none;
+}
+
+.projectsContent.show {
+    display: block;
+}
+
+/* Enhanced Project Card Styles */
+.project-card {
+    background: var(--light-color);
+    border: 1px solid var(--medium-gray);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.project-card img {
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.project-card .card-text {
+    font-size: 0.875rem;
+    color: var(--dark-gray);
+    margin-bottom: 15px;
+}
+
+.project-card .btn-container a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-card .btn-container a.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-radius: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+}
+
+.project-card .btn-container a.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.project-card .btn-container a.btn-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+.project-card .btn-container a.btn-secondary:hover {
+    background-color: #6c757d;
+    color: var(--text-light);
+}
+
+.project-card .btn-container a.btn-secondary.disabled {
+    background-color: #d6d6d6;
+    color: #a1a1a1;
+    border-color: #d6d6d6;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.project-card .btn-container a.btn-secondary.disabled:hover {
+    background-color: #d6d6d6;
+    color: #a1a1a1;
+}
+
+.project-card .progress {
+    height: 20px;
+    margin-top: 15px;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+}
+
+.project-card .progress-bar {
+    transition: width 0.3s ease;
+    text-align: center;
+    color: var(--text-light);
+    height: 100%;
+}
+
+
     </style>
 </head>
 
 <body>
     <header class="bg-dark text-white text-center py-5">
         <div class="container">
-            <img src="ana.jpeg" alt="Abbes Abd Ennour" class="rounded-circle mb-3" width="150">
+            <img src="ana.jpeg" alt="Abbes Abd Ennour" class="rounded-circle mb-3">
             <h1 class="display-4">Abbes Abd Ennour</h1>
             <p class="lead">Software Developer | Frontend, Backend & Game Dev</p>
             <div class="d-flex justify-content-center">
@@ -149,137 +265,162 @@
             </div>
         </div>
     </header>
-
-    <section class="py-5 animated-section" id="about-me">
-        <div class="container">
-            <h2 class="text-center">About Me</h2>
-            <p class="text-center mb-5">I am a passionate software developer with experience in frontend, backend, and
-                game development. I enjoy creating interactive and user-friendly applications and games that provide
-                value to users. Currently pursuing a Master’s Degree in Computer Science at the University of
-                Tlemcen.</p>
-
-            <div class="row">
-                <div class="col-md-4 text-center">
-                    <h3>Frontend Development</h3>
-                    <p>HTML, CSS, JavaScript, React, WordPress</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <h3>Backend Development</h3>
-                    <p>PHP, SQL, Node.js, Express.js</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <h3>Game Development</h3>
-                    <p>Unity, C#, Blender</p>
-                </div>
-            </div>
+<section class="bg-light py-5 animated-section" id="projects">
+    <div class="container">
+        <div class="text-center mb-4">
+    <button class="btn btn-primary" type="button" id="toggleProjects">Show</button>
         </div>
-    </section>
-
-    <section class="bg-light py-5 animated-section" id="projects">
-        <div class="container">
-            <h2 class="text-center">Projects</h2>
+        <div class="projects-content collapse show" id="projectsContent">
             <div class="row">
                 <!-- Project 1: Tlemcen Introduction Website -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card project-card h-100">
                         <img src="project1.png" class="card-img-top" alt="Tlemcen Introduction Website">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Tlemcen Introduction Website</h5>
-                            <p class="card-text">Developed a WordPress website for introducing Tlemcen and its artisans.
-                                This project features a user-friendly interface and informative content about the city
-                                and
-                                its cultural heritage.</p>
-                            <div class="btn-container">
-                                <a href="https://dev-tlemtour.pantheonsite.io/" class="btn btn-primary"
-                                    target="_blank">View
-                                    Project</a>
+                            <p class="card-text flex-grow-1">Developed a WordPress website for introducing Tlemcen and
+                                its artisans. This project features a user-friendly interface and informative content
+                                about the city and its cultural heritage.</p>
+                            <div class="mt-auto btn-container">
+                                <a href="https://dev-tlemtour.pantheonsite.io/"
+                                    class="btn btn-primary btn-outline-light w-100" target="_blank">View Project</a>
+                            </div>
+                            <!-- Progress Bar -->
+                            <div class="progress mt-3">
+                                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100"
+                                    aria-valuemin="0" aria-valuemax="100">Completed</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Project 2: Slither.io-like Game -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card project-card h-100">
                         <img src="project2.png" class="card-img-top" alt="Slither.io-like Game">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Slither.io-like Game</h5>
-                            <p class="card-text">Developed a multiplayer game similar to Slither.io using Unity. This
-                                project features networked gameplay, player growth mechanics, and a circular game world.
-                                <strong>Still Under Development</strong>
-                            </p>
-                            <div class="btn-container">
-                                <a href="#" class="btn btn-secondary disabled">Not Available</a>
+                            <p class="card-text flex-grow-1">Developed a multiplayer game similar to Slither.io using
+                                Unity. This project features networked gameplay, player growth mechanics, and a circular
+                                game world. <strong>Still Under Development</strong></p>
+                            <div class="mt-auto btn-container">
+                                <a href="#" class="btn btn-secondary btn-outline-light disabled w-100">Not Available</a>
+                            </div>
+                            <!-- Progress Bar -->
+                            <div class="progress mt-3">
+                                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                                    aria-valuemin="0" aria-valuemax="100">80% Complete</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Project 3: The Giving Water -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card project-card h-100">
                         <img src="project3.png" class="card-img-top" alt="The Giving Water">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">The Giving Water</h5>
-                            <p class="card-text">Created an application using React, Node.js, and Express.js to manage
-                                and
-                                distribute water resources. This project demonstrates full-stack development skills and
-                                modern web technologies.
-                                <strong>Still Under Development</strong>
+                            <p class="card-text flex-grow-1">Created an application using React, Node.js, and Express.js
+                                to manage and distribute water resources. This project demonstrates full-stack
+                                development skills and modern web technologies. <strong>Still Under Development</strong>
                             </p>
-                            <div class="btn-container">
-                                <a href="#" class="btn btn-secondary disabled">Not Available</a>
+                            <div class="mt-auto btn-container">
+                                <a href="#" class="btn btn-secondary btn-outline-light disabled w-100">Not Available</a>
+                            </div>
+                            <!-- Progress Bar -->
+                            <div class="progress mt-3">
+                                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                                    aria-valuemin="0" aria-valuemax="100">80% Complete</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Project 4: The Forgers of Tlemken -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card project-card h-100">
                         <img src="project4.png" class="card-img-top" alt="The Forgers of Tlemken">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">The Forgers of Tlemken</h5>
-                            <p class="card-text">An immersive Unity game involving player customization, multiple
-                                scenes,
-                                and interactive elements. This project showcases advanced game development and design
-                                skills.
-                                <strong>Still Under Development</strong>
-                            </p>
-                            <div class="btn-container">
-                                <a href="#" class="btn btn-secondary disabled">Not Available</a>
+                            <p class="card-text flex-grow-1">An immersive Unity game involving player customization,
+                                multiple scenes, and interactive elements. This project showcases advanced game
+                                development and design skills. <strong>Still Under Development</strong></p>
+                            <div class="mt-auto btn-container">
+                                <a href="#" class="btn btn-secondary btn-outline-light disabled w-100">Not Available</a>
+                            </div>
+                            <!-- Progress Bar -->
+                            <div class="progress mt-3">
+                                <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30"
+                                    aria-valuemin="0" aria-valuemax="100">30% Complete</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer class="text-center">
-        <p>&copy; 2024 Abbes Abd Ennour. All rights reserved.</p>
-        <p>
-            <a href="#about-me">About Me</a> | <a href="#projects">Projects</a>
-        </p>
-    </footer>
 
+
+    <section class="py-5 animated-section" id="about-me" style="background-color: #007bff; color: white;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="font-weight: bold; font-size: 2.5em;">About Me</h2>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-laptop-code fa-3x mb-3"></i>
+                    <h3>Frontend Development</h3>
+                    <p>HTML, CSS, JavaScript, React, WordPress</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-server fa-3x mb-3"></i>
+                    <h3>Backend Development</h3>
+                    <p>PHP, SQL, Node.js, Express.js</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-gamepad fa-3x mb-3"></i>
+                    <h3>Game Development</h3>
+                    <p>Unity, C#, Blender</p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col text-center">
+                    <p class="lead">I am a passionate software developer with experience in frontend, backend, and game
+                        development. I enjoy creating interactive and user-friendly applications and games that provide
+                        value to users. Currently pursuing a Master’s Degree in Computer Science at the University of
+                        Tlemcen.</p>
+                </div>
+            </div>
+        </div>
+    </section>  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Fade in sections on scroll
-        document.addEventListener('DOMContentLoaded', function () {
-            const sections = document.querySelectorAll('.animated-section');
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            });
+  document.getElementById('toggleProjects').addEventListener('click', function () {
+        var content = document.getElementById('projectsContent');
+        if (content.classList.contains('show')) {
+            content.classList.remove('show');
+            this.textContent = 'Show';
+        } else {
+            content.classList.add('show');
+            this.textContent = 'Hide';
+        }
+    });
 
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
+    // Optionally, set the initial state based on your default preference
+    document.addEventListener('DOMContentLoaded', function () {
+        var content = document.getElementById('projectsContent');
+        var button = document.getElementById('toggleProjects');
+
+        // Set the button text based on the initial state of the content
+        if (content.classList.contains('show')) {
+            button.textContent = 'Hide';
+        } else {
+            button.textContent = 'Show';
+        }
+    });
+
+</script>
+
 </body>
 
 </html>
